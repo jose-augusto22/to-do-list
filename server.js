@@ -7,11 +7,11 @@ const tasks = [];
 app.post("/tasks", (req, res) => {
   tasks.push(req.body);
 
-  res.send("Ok, aqui deu boa");
+  res.status(201).json(req.body);
 });
 
 app.get("/tasks", (req, res) => {
-  res.json(tasks);
+  res.status(200).json(tasks);
 });
 
 app.listen(3000);
